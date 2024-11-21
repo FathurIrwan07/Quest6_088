@@ -1,5 +1,5 @@
 Halaman awal atau pertama
-2. ![image](https://github.com/user-attachments/assets/f5ed326b-a412-4fbc-a547-311426a90de5)
+![image](https://github.com/user-attachments/assets/f5ed326b-a412-4fbc-a547-311426a90de5)
 
 Halaman kedua
 ![image](https://github.com/user-attachments/assets/38934b34-0b8f-4be2-8dc1-890f8e19bfe9)
