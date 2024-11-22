@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
-class RencanaStudyViewModel : ViewModel() {
+class RencanaStudyViewModel:ViewModel() {
     private val _krsState = MutableStateFlow(RencanaStudy())
     val krsStateUi: StateFlow<RencanaStudy> = _krsState.asStateFlow()
 
@@ -15,14 +15,14 @@ class RencanaStudyViewModel : ViewModel() {
         _krsState.update { stateMK -> stateMK.copy(namaMK = mkPilihan) }
     }
 
-    fun setKelas(kelasPilihan: String) {
+    fun setKelas(kelasPilihan: String){
         _krsState.update { stateKelas -> stateKelas.copy(kelas = kelasPilihan) }
     }
 
-    fun saveDataKRS(list: MutableList<String>) {
+    fun saveDataKRS(ls: MutableList<String>){
         _krsState.update { status -> status.copy(
-            namaMK = list[0],
-            kelas = list[1]
-        )}
+            namaMK = ls[0],
+            kelas = ls [1]
+        ) }
     }
 }

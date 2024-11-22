@@ -1,24 +1,27 @@
 package com.dev.navigasi.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.dev.navigasi.model.Mahasiswa
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 
-class MahasiswaViewModel : ViewModel() {
+class MahasiswaViewModel: ViewModel() {
+    private val _mahasiswaStateUI=
+        MutableStateFlow(Mahasiswa())
 
-    // MutableStateFlow untuk internal
-    private val _mahasiswaStateUI = MutableStateFlow(Mahasiswa())
+    val mahasiswaUiState:
+            StateFlow<Mahasiswa> =
+        _mahasiswaStateUI.asStateFlow()
 
-    // StateFlow untuk diekspos (read-only)
-    val mahasiswaUiState: StateFlow<Mahasiswa> = _mahasiswaStateUI
-
-    // Fungsi untuk menyimpan atau memperbarui data Mahasiswa
-    fun saveDataMahasiswa(mahasiswa: Mahasiswa) {
-        viewModelScope.launch {
-            _mahasiswaStateUI.value = mahasiswa
+    fun  saveDataMahasiswa(ls: MutableList<String>){
+        _mahasiswaStateUI.update { statusSaatIni ->
+            statusSaatIni.copy(
+                nim = ls[0],
+                nama = ls[1],
+                email = ls[2],
+            )
         }
     }
 }

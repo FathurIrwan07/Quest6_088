@@ -6,7 +6,7 @@ object MataKuliah {
         "Penggembangan Aplikasi Mobile",
         "Fisika dan Elektronika",
         "Pengembanggan Aplikasi Web",
-        "Matematika",
+        "Desain Aplikasi Mobile",
         "Prototyping"
 
     )
