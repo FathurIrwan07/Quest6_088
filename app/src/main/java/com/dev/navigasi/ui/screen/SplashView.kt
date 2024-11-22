@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import com.dev.navigasi.R
 
 
+
 @Composable
 fun SplashView(
     onMulaiButton: () -> Unit,
