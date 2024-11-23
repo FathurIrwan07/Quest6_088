@@ -33,6 +33,7 @@ import com.dev.navigasi.model.Mahasiswa
 import com.dev.navigasi.model.RencanaStudy
 
 
+
 @Composable
 fun DetailView(
     mahasiswa: Mahasiswa,
